@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<base href="https://tunis2canada.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tunis2Canada - Solutions d'Immigration Alimentées par l'IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --text-color: #34495e;
+    --bg-color: #f9f9f9;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: var(--primary-color);
+  }
+  .hero {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+    padding: 150px 0 100px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  .hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  .btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 80px;
+  }
+  .service-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-10px);
+  }
+  .testimonial {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    margin-top: 80px;
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  }
+  .ai-powered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+  }
+  .ai-icon {
+    font-size: 3em;
+    margin-right: 20px;
+    color: var(--primary-color);
+  }
+  footer {
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 80px;
+  }
+  
+  /* Enhanced styles for the contact form */
+  .contact-form {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  .form-group textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  .form-submit {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .form-submit .btn {
+    background-color: var(--primary-color);
+    font-size: 18px;
+    padding: 15px 40px;
+  }
+  .form-submit .btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive design improvements */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5em;
+    }
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav a {
+      margin: 10px 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <img src="logo.png" alt="Logo Tunis2Canada" width="150" height="50">
+        <div>
+          <a href="#accueil">Accueil</a>
+          <a href="#services">Services</a>
+          <a href="#apropos">À Propos</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="accueil" class="hero">
+    <div class="container">
+      <h1>Votre Avenir Canadien Commence Ici</h1>
+      <p>Solutions d'immigration intelligentes pour les Tunisiens, propulsées par l'IA</p>
+      <a href="#contact" class="btn">Démarrez Votre Voyage</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="ai-powered">
+      <div class="ai-icon">🤖</div>
+      <h2>Immigration Intelligente Alimentée par l'IA</h2>
+    </section>
+
+    <section id="services">
+      <h2>Nos Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Évaluation IA</h3>
+          <p>Notre algorithme d'IA analyse votre profil pour identifier les meilleures options d'immigration.</p>
+        </div>
+        <div class="service-card">
+          <h3>Préparation de Dossier Automatisée</h3>
+          <p>Système intelligent pour compiler et vérifier vos documents d'immigration.</p>
+        </div>
+        <div class="service-card">
+          <h3>Suivi en Temps Réel</h3>
+          <p>Plateforme en ligne pour suivre l'avancement de votre dossier 24/7.</p>
+        </div>
+        <div class="service-card">
+          <h3>Assistance Virtuelle</h3>
+          <p>Chatbot IA disponible 24/7 pour répondre à vos questions d'immigration.</p>
+        </div>
+      </div>
+    </section>
+  
+    <section class="testimonial">
+      <h2>Ce Que Disent Nos Clients</h2>
+      <blockquote>
+        "Grâce à l'approche innovante de Tunis2Canada et à leur technologie IA, mon processus d'immigration a été incroyablement fluide et efficace."
+      </blockquote>
+      <cite>- Sofiane M., Toronto</cite>
+    </section>
+  
+    <section id="apropos">
+      <h2>À Propos de Tunis2Canada</h2>
+      <p>Nous sommes une agence d'immigration de pointe, combinant l'expertise humaine avec la puissance de l'intelligence artificielle. Notre mission est de simplifier et d'optimiser le parcours d'immigration des Tunisiens vers le Canada, en offrant des solutions sur mesure et technologiquement avancées.</p>
+    </section>
+  
+    <section id="contact">
+        <h2>Contactez-Nous</h2>
+        <div class="contact-form">
+          <form id="contactForm">
+            <input type="hidden" name="access_key" value="bc64416d-12cf-4b25-b684-599e4d0cda2e">
+            <div class="form-group">
+              <label for="nom">Nom complet</label>
+              <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="telephone">Numéro de téléphone</label>
+              <input type="tel" id="telephone" name="telephone">
+            </div>
+            <div class="form-group">
+              <label for="sujet">Sujet</label>
+              <select id="sujet" name="sujet">
+                <option value="evaluation">Demande d'évaluation</option>
+                <option value="information">Demande d'information</option>
+                <option value="rendez-vous">Prise de rendez-vous</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn">Envoyer la demande</button>
+            </div>
+            <div id="result"></div>
+          </form>
+        </div>
+      </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Tunis2Canada. Tous droits réservés.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/Tunis2Canada" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/Tunis2Canada" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/company/Tunis2Canada" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  
+    // Form validation
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (this.checkValidity()) {
+        // Form is valid, you can submit it
+        alert('Votre demande a été envoyée avec succès!');
+        this.submit();
+      } else {
+        // Form is invalid, show error messages
+        this.reportValidity();
+      }
+    });
+  </script>
+ <script>
+    const form = document.getElementById('contactForm');
+    const result = document.getElementById('result');
+  
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+  
+      result.innerHTML = "Veuillez patienter...";
+  
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.innerHTML = json.message;
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        result.innerHTML = "Une erreur s'est produite!";
+      })
+      .then(function() {
+        form.reset();
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 5000);
+      });
+    });
+  
+    // Smooth scrolling code (keep this part)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  </body>
+  </html>
